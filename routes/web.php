@@ -19,3 +19,12 @@ Route::get('/', function () {
 Route::get('/card', function () {
     return view('card');
 });
+Route::get('/cart', function () {
+    return view('cart');
+});
+Route::get('/cart', function () {
+    return view('cart');
+});
+Route::get('/lk', function () {
+    return view('lk');
+});
