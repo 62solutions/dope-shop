@@ -11,7 +11,7 @@ const store = createStore({
         info: null,
         routes: [],
         breadcrumbs: {},
-        current_title: 'adminka',
+        current_title: '',
     },
 
     mutations: {
@@ -22,6 +22,10 @@ const store = createStore({
         setError(state, value) {
             state.error = value;
         },
+
+        setCurrentTitle(state, value) {
+            state.current_title = value;
+        }
     },
 
     getters: {
