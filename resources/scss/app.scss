@@ -1,0 +1,18 @@
+// Fonts
+@import url('https://fonts.bunny.net/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+#main_container{
+
+    height: 400px;
+    border: 1px solid black;
+
+    .sub_container{
+        height: 50px;
+        background-color: #2d3748;
+    }
+
+}
+
