@@ -37,7 +37,20 @@ class CmsRouter
             'component' => 'Categories',
             'props' => [],
             'inmenu' => true,
-
+            'children' => [
+                    [
+                        'path' => '/categories/subcategory1',
+                        'name' => 'Subcategory1',
+                        'meta' => ['title' => 'подкатегория 1'],
+                        'component' => 'Subcategory1',
+                    ],
+                    [
+                        'path' => '/categories/subcategory2',
+                        'name' => 'Subcategory2',
+                        'meta' => ['title' => 'подкатегория 2'],
+                        'component' => 'Subcategory2',
+                    ],
+                ]
         ];
 
 
