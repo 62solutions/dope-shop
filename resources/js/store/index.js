@@ -12,6 +12,7 @@ const store = createStore({
         routes: [],
         breadcrumbs: {},
         current_title: '',
+        defaultActiveMenuItem: '',
     },
 
     mutations: {
@@ -25,7 +26,13 @@ const store = createStore({
 
         setCurrentTitle(state, value) {
             state.current_title = value;
+        },
+
+        setDefaultActiveMenuItem(state, value) {
+            state.defaultActiveMenuItem = value;
         }
+
+
     },
 
     getters: {

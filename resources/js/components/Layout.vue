@@ -5,31 +5,37 @@
             <el-aside width="200px">
 
                 <el-menu
-                    default-active="2"
                     class="el-menu-vertical-demo"
+                    mode="vertical"
+                    :unique-opened="true"
+                    :default-active="defaultActiveMenuItem"
+                    ref="menu"
                 >
                     <template v-for="item in routes">
-                        <el-menu-item index="2" v-if="item.inmenu && typeof item.children == 'undefined'" >
-                            <span >
-                               <router-link  :to="{name: item.name}" style="text-decoration: none">{{item.meta.title}}</router-link>
-                            </span>
+                        <el-menu-item v-if="item.inmenu && typeof item.children == 'undefined'"
+                                      @click="handleClick(item)"
+                                      :index="item.meta.index"
+                        >
+                            <span>{{ item.meta.title }}</span>
                         </el-menu-item>
                         <template v-if="typeof item.children !== 'undefined'">
-                            <el-sub-menu index="1">
+                            <el-sub-menu  :index="item.meta.index">
                                 <template #title>
                                     <span>{{item.meta.title}}</span>
                                 </template>
-                                <template v-for="children in item.children">
-                                    <el-menu-item >
-                                        <span>
-                                            <router-link  :to="{name: children.name}" style="text-decoration: none">{{children.meta.title}}</router-link>
-                                        </span>
+                                <template v-for="children in item.children" >
+                                    <el-menu-item @click="handleClick(children)"
+                                                  :index="children.meta.index"
+                                    >
+                                        {{children.meta.title}}
                                     </el-menu-item>
                                 </template>
                             </el-sub-menu>
                         </template>
-
                     </template>
+
+
+                    <el-button @click="test">start</el-button>
                 </el-menu>
             </el-aside>
             <el-container>
@@ -52,9 +58,31 @@
 import { mapState } from 'vuex';
 export default {
     name: "Layout",
+    data(){
+        return{
+
+        }
+    },
     computed: {
-        ...mapState(['routes', 'current_title']),
-    }
+        ...mapState(['routes', 'current_title', 'defaultActiveMenuItem']),
+    },
+    methods: {
+        handleClick(item) {
+            if (item.name) {
+                this.$router.push({ name: item.name })
+            }
+        },
+
+        test(){
+
+        }
+    },
+
+
+   mounted() {
+        this.test()
+   }
+
 }
 </script>
 

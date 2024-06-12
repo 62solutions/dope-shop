@@ -30,7 +30,7 @@ function getChildren(item) {
             })
         });
     }
- // console.log(children)
+
     return children;
 }
 
@@ -50,12 +50,17 @@ for (const i in raw){
                 children: getChildren(item)
             })
     }
-    console.log(router.getRoutes())
+
 }
 
 router.beforeEach((to, from, next) => {
     store.commit('setCurrentTitle', to.meta.title)
     next()
+})
+
+router.isReady().then(() => {
+    const currentRoute = router.currentRoute.value;
+    store.commit('setDefaultActiveMenuItem', currentRoute.meta.index)
 })
 
 export default router;
