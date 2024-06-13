@@ -55,6 +55,7 @@ for (const i in raw){
 
 router.beforeEach((to, from, next) => {
     store.commit('setCurrentTitle', to.meta.title)
+    store.commit('setDefaultActiveMenuItem', to.meta.index)
     next()
 })
 

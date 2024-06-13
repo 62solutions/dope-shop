@@ -35,7 +35,7 @@
                     </template>
 
 
-                    <el-button @click="test">start</el-button>
+<!--                    <el-button @click="test">start</el-button>-->
                 </el-menu>
             </el-aside>
             <el-container>
@@ -80,7 +80,7 @@ export default {
 
 
    mounted() {
-        this.test()
+
    }
 
 }

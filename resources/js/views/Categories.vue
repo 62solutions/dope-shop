@@ -1,5 +1,7 @@
 <template>
 
+
+
     <router-view></router-view>
 
 
@@ -9,6 +11,7 @@
 
 export default {
     name: "Categories",
+
 }
 </script>
 

@@ -4,7 +4,7 @@
     <title>Система управления</title>
 
 </head>
-<body>
+<body style="font-family: Arial; padding: 0; margin: 0">
 <div id="app">
 
 </div>
