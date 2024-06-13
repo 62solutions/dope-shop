@@ -35,7 +35,7 @@
                     </template>
 
 
-<!--                    <el-button @click="test">start</el-button>-->
+
                 </el-menu>
             </el-aside>
             <el-container>
@@ -73,9 +73,7 @@ export default {
             }
         },
 
-        test(){
 
-        }
     },
 
 
