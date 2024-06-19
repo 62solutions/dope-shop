@@ -9,8 +9,8 @@ use Illuminate\Support\Facades\Auth;
 class IndexController extends Controller
 {
 
-
-    public function index(){
+    public function index()
+    {
         return view('welcome');
     }
 
@@ -22,9 +22,6 @@ class IndexController extends Controller
 //        }else{
 //            return $cmsRouter->getRoutes(Auth::user());
 //        }
-
-
-
         return $cmsRouter->getRoutes();
     }
 }
